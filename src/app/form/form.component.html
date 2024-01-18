@@ -1,0 +1,13 @@
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Comapny  Name</label>
+      <input type="email" class="form-control"  aria-describedby="emailHelp" #Cname [value]="cname" >
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label" >Gst Number</label>
+      <input type="text" class="form-control" #CGst [value]="cgst">
+    </div>
+
+    <button type="submit" class="btn btn-success" (click)="addData(Cname.value,CGst.value)" *ngIf="!updateStatus">Add</button>
+    <button type="submit" class="btn btn-primary" (click)="updateData(Cname.value,CGst.value)" *ngIf="updateStatus">Update</button>
+
