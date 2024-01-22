@@ -7,12 +7,15 @@ export class CompanyServices{
     deleteComapnyData(index:number){
         this.company.splice(index,1)
         console.log(this.company);
-        
     }
+    
     editCompanyData(index:number, name:string,gst:string){
         this.company[index].name=name;
         this.company[index].gst=gst;
     }
 
+    getComanyData(){
+        return this.company;
+    }
 
 }

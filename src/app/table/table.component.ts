@@ -7,15 +7,18 @@ import { CompanyServices } from '../services/company.service';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent {
-  @Input() com!: { name: string, gst: string }[];
+ 
 
+  constructor(private services: CompanyServices) { }
+  
   index!: number;
   companyname:string ="";
   companygst:string ="";
   updatestatus:boolean=false;
   // addStatus:boolean = false;
-
-  constructor(private services: CompanyServices) { }
+  
+  com=this.services.getComanyData()
+  
   deleteComapny(name: string) {
     const index = this.com.findIndex(ele => ele.name === name)
     this.services.deleteComapnyData(index)

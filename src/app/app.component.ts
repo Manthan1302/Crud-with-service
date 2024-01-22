@@ -8,14 +8,14 @@ import { CompanyServices } from './services/company.service';
   styleUrls: ['./app.component.css'],
 
 })
-export class AppComponent implements OnInit{
-  company:{name:string,gst:string}[]=[]
+export class AppComponent implements OnInit {
+  company: { name: string, gst: string }[] = []
 
-  constructor(private services:CompanyServices){
+  constructor(private services: CompanyServices) {
   }
   ngOnInit(): void {
-    this.company=this.services.company
-console.log(this.company);
+    this.company = this.services.company
+    console.log(this.company);
 
   }
 }
